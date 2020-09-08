@@ -15,10 +15,9 @@
 * Leverage components, one of the more powerful features of Vue.js.
 * Familiarize yourself with core Vue.js concepts.
 
-### Demo
+### Deploy URL
 
-<https://vuegram-tutorial-74aa5.web.app/>  
-<https://vuegram-tutorial-74aa5.firebaseapp.com/>
+<https://vuegram-tutorial-74aa5.web.app/>
 
 ### Wiki
 
