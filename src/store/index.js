@@ -17,10 +17,13 @@ export default new Vuex.Store({
   actions: {
     async login({ dispatch }, form) {
       // sign user in
-      const { user } = await fb.auth.signInWithEmailAndPassword(form.email, form.password)
+      const { user } = await fb.auth.signInWithEmailAndPassword(
+        form.email,
+        form.password
+      );
 
       // fetch user profile and set in state
-      dispatch('fetchUserProfile', user)
+      dispatch("fetchUserProfile", user)
     },
     async fetchUserProfile({ commit }, user) {
       // fetch user profile
@@ -28,9 +31,24 @@ export default new Vuex.Store({
 
       // set user profile in state
       commit('setUserProfile', userProfile.data())
-      
       // change route to dashboard
-      router.push('/')
+      router.push("/")
+    },
+    async signup({ dispatch }, form) {
+      // sign user up
+      const { user } = await fb.auth.createUserWithEmailAndPassword(
+        form.email,
+        form.password
+      );
+
+      // create user profile object in userCollections
+      await fb.usersCollection.doc(user.uid).set({
+        name: form.name,
+        title: form.title,
+      });
+
+      // fetch user profile and set in state
+      dispatch("fetchUserProfile", user);
     }
   },
   modules: {
