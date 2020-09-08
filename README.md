@@ -24,6 +24,10 @@
 npm install
 ```
 
+Copy the `.env.js.example` to `.env.js`  
+If you want to use my firebase project, get the configuration from me privately.  
+Or set up your own firebase project
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
