@@ -26,4 +26,4 @@ pnpm-debug.log*
 *.sw?
 
 # .firebase folder
-.firebase/
+.firebase
